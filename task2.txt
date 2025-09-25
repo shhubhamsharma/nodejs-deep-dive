@@ -1,0 +1,22 @@
+[
+  {
+    "task1": "T1",
+    "duration": 1000
+  },
+  {
+    "name": "Sample Task",
+    "duration": 2000
+  },
+  {
+    "name": "Sample Task",
+    "duration": 2000
+  },
+  {
+    "name": "Sample Task",
+    "duration": 2000
+  },
+  {
+    "name": "Sample Task 2",
+    "duration": 2100
+  }
+]

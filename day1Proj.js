@@ -1,22 +1,17 @@
-const fs = require('fs').promises;
+const { readFile, writeTask, handleError } = require('./taskUtility');
 
-async function addTask(name, duration) {
+async function addTask(name, duration, fileName) {
     try {
         if (!name || typeof duration !== 'number') {
             throw new Error('Invalid task data');
         }
-        const file = await fs.readFile('tasks.json', 'utf8')
+        const file = await readFile(fileName, 'utf8')
         const tasks = JSON.parse(file);
-        tasks.push({ name, duration });
-        await fs.writeFile('tasks.json', JSON.stringify(tasks, null, 2));
+        await writeTask(tasks, name, duration, fileName);
+        console.log(`Task "${name}" with duration ${duration}ms added.`);
     }
     catch (err) {
-        if (err.code === 'ENOENT') {
-            console.log('File not found, creating a new tasks.json...');
-            await fs.writeFile('tasks.json', JSON.stringify([{ name, duration }], null, 2));
-        } else {
-            console.error('Unexpected error:', err);
-        }
+        handleError(err, name, duration, fileName);
     }
 }
-addTask('Sample Task', 2000);
+addTask('Sample Task 2', 2100, 'task2.json');
