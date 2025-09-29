@@ -67,3 +67,12 @@ process.on('uncaughtException', async (err) => {
  * This demonstrates how EventEmitter can be used to create an event-driven architecture, allowing different parts of the application to respond to events in a decoupled manner.
  * 
  */
+
+/**
+ * This code adds robust signal handling and error management to a task management application.
+ * It listens for SIGINT and SIGTERM signals to allow graceful shutdowns, ensuring that any necessary cleanup or logging can occur before the application exits.
+ * Additionally, it captures uncaught exceptions in asynchronous operations, logging the errors and exiting the process to prevent undefined states.
+ * The use of async functions for signal handling ensures that any asynchronous cleanup tasks can be completed before the process exits.
+ * This approach enhances the reliability and maintainability of the application, making it more resilient to unexpected interruptions and errors.
+ * 
+ */
