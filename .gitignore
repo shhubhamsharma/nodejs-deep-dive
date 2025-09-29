@@ -1,0 +1,21 @@
+# Node modules (always ignore this)
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+
+# Build/compiled folders
+dist/
+build/
+
+# Coverage reports
+coverage/
+
+# OS / Editor specific
+.DS_Store
+.idea/
+.vscode/
