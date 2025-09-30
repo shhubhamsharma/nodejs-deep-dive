@@ -1,10 +1,7 @@
 /**
  * Add SIGINT & SIGTERM handling in your Task Manager.
-
 Log uncaught exceptions for any async operation.
-
 Measure task addition time using process.hrtime.bigint().
-
 (Optional) Split heavy tasks into a child process and communicate using IPC.
  */
 const { readFile, writeTask, handleError, writeFile } = require('../taskUtility');
@@ -38,23 +35,23 @@ async function taskAddedListener(task) {
         console.log(`Event received: Task "${task.name}" added with duration ${task.duration}ms`);
         // process.emit('SIGINT',true); // Simulate SIGINT for testing
     }
-   catch (err) {
+    catch (err) {
         console.error('Error logging task event:', err);
     }
 }
 
-handleEvent=async () => {
+handleEvent = async () => {
     console.log('Received SIGTERM. Gracefully shutting down...');
     await writeFile('taskLog.txt', `Received SIGTERM. Gracefully shutting down...\n`, 'append');
     process.exit(0);
 }
-process.on('SIGINT',handleEvent);
+process.on('SIGINT', handleEvent);
 
-process.on('SIGTERM',handleEvent );
+process.on('SIGTERM', handleEvent);
 
 process.on('uncaughtException', async (err) => {
     console.error('Uncaught Exception:', err);
-        await writeFile('taskLog.txt', `'Uncaught Exception:', ${err}`, 'append');
+    await writeFile('taskLog.txt', `'Uncaught Exception:', ${err}`, 'append');
     // Optionally log the error to a file or monitoring service
     process.exit(1); // Exit the process to avoid undefined state
 });

@@ -5,3 +5,14 @@ Event received: Task "Sample Task 2042" added with duration 2100ms
 Event received: Task "Sample Task 2042" added with duration 2100ms
 Event received: Task "Sample Task 2042" added with duration 2100ms
 Received SIGTERM. Gracefully shutting down...
+Event received: Task "Sample Task 2042" added with duration 2100ms
+Event received: Task "Sample Task 2042" added with duration 2100ms
+Event received: Task "Sample Task 2042" added with duration 2100ms
+Event received: Task "Sample Task 2042" added with duration 2100ms
+Event received: Task "Sample Task 2042" added with duration 2100ms
+Event received: Task "Sample Task 2042" added with duration 2100ms
+Event received: Task "Sample Task 2042" added with duration 2100ms
+Event received: Task "Sample Task 2042" added with duration 2100ms
+Event received: Task "Sample Task 2042" added with duration 2100ms
+'Uncaught Exception:', ReferenceError: reject is not definedEvent received: Task "Sample Task 2042" added with duration 2100ms
+Event received: Task "Sample Task 2042" added with duration 2100ms
